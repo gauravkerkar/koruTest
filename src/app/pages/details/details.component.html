@@ -1,0 +1,71 @@
+<div class="page-loader text-center" *ngIf="loading;else showData ">
+    <mat-progress-spinner
+    class="mx-auto"
+    [mode]="'indeterminate'"
+    [value]="50">
+</mat-progress-spinner>
+<p class="mt-2">Loading...</p>
+</div>
+
+
+
+<ng-template #showData>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <p class="secondary-color font-16">Lorem ipsum dolor sit amet.</p>
+        <button class="primary-btn" [class.btn-disable]="!selection.hasValue()" (click)="deleteSelected($event)">Delete</button>
+    </div>
+    
+    <!-- =====#DETAILS TABLE===== -->
+<div class="table-responsive custom-scrollbar"  *ngIf="sortedData.length != 0;else noData">
+    <table matSort (matSortChange)="sortData($event)" class="table table-bordered primary-table">
+        <thead>
+            <tr>
+                <th>
+                    <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+                    </mat-checkbox>
+                </th>
+                <th scope="col" mat-sort-header="userName">
+                    User Name
+                </th>
+                <th scope="col" mat-sort-header="phoneNumber">
+                    Phone Number
+                </th>
+                <th scope="col" mat-sort-header="email">
+                    Email ID
+                </th>
+                <th scope="col" class="text-end">
+                    Options
+                </th>
+            </tr>
+        </thead>
+        <tbody cdkDropList (cdkDropListDropped)="dragItem($event)">
+            <tr cdkDrag cdkDragLockAxis="y" *ngFor="let data of sortedData; let idx=index">
+                <td>
+                    <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(data.id) : null"
+                        [checked]="selection.isSelected(data.id)">
+                    </mat-checkbox>
+                </td>
+                <td cdkDragHandle>{{data.username}}</td>
+                <td>{{data.phone}}</td>
+                <td>{{data.email}} </td>
+                <td class="text-end">
+                    <button class="action-btn me-2" (click)="openDialog(data.id)">
+                        <img src="/assets/image/icons/delete.svg" alt="delete">
+                    </button>
+                    <button cdkDragHandle class="action-btn"><img src="/assets/image/icons/drag.svg"
+                            alt="drag"></button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+</ng-template>
+
+<ng-template #noData> 
+    <div class="nodata">
+<p>NO DATA FOUND..</p>
+</div> 
+</ng-template>

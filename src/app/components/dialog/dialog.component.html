@@ -1,0 +1,18 @@
+
+
+<div class=" d-flex">
+    <div class="action-dialog__icon">
+        <svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.41879 8.41879C6.70082 10.1368 5.33806 12.1763 4.4083 14.4209C3.47854 16.6656 3 19.0713 3 21.5009C3 23.9305 3.47854 26.3363 4.4083 28.5809C5.33806 30.8255 6.70082 32.8651 8.41879 34.583C10.1368 36.301 12.1763 37.6638 14.4209 38.5935C16.6656 39.5233 19.0713 40.0018 21.5009 40.0018C23.9305 40.0018 26.3363 39.5233 28.5809 38.5935C30.8255 37.6638 32.8651 36.301 34.583 34.583M8.41879 8.41879C10.1368 6.70082 12.1763 5.33806 14.4209 4.4083C16.6656 3.47854 19.0713 3 21.5009 3C23.9305 3 26.3363 3.47854 28.5809 4.4083C30.8255 5.33806 32.8651 6.70082 34.583 8.41879C36.301 10.1368 37.6638 12.1763 38.5935 14.4209C39.5233 16.6656 40.0018 19.0713 40.0018 21.5009C40.0018 23.9305 39.5233 26.3363 38.5935 28.5809C37.6638 30.8255 36.301 32.8651 34.583 34.583M8.41879 8.41879L21.5009 21.5009L34.583 34.583" stroke="#fff" stroke-width="4.11129" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            
+    </div>
+    <div class="action-dialog__content">
+        <h4 class="action-dialog__content-text mb-4" >Are you sure want to delete</h4>
+
+        <div class="action-dialog__action ">
+            <button class="action-dialog__action-btn primary me-2" (click)="dialogAction($event,true)">Yes</button>
+            <button class="action-dialog__action-btn secondary" (click)="dialogAction($event,false)">cancel</button>
+        </div>
+    </div>
+</div>

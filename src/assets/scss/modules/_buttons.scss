@@ -1,0 +1,26 @@
+.primary-btn{
+    background-color:  $primary-color;
+    padding: 8px 20px;
+    border-radius: 4px;
+    border: 0;
+    color: #fff;
+    &:hover{
+        background-color: darken($color: $primary-color, $amount: 10);
+    }
+}
+
+.action-btn{
+border: 0;
+background: #fff;
+    padding: 2px 6px;
+    border: 1px solid #b8b7b7;
+    border-radius: 3px;
+    img{
+        width: 12px;
+    }
+}
+
+.btn-disable{
+    opacity: 0.5;
+    pointer-events: none;
+}

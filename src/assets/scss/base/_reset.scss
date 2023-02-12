@@ -1,0 +1,92 @@
+/*------------------------------------*\
+    #2. RESET
+\*------------------------------------*/
+*,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+a,
+dl,
+dt,
+dd,
+ol,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+:active,
+:focus {
+  outline: none !important;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+textarea {
+  resize: none;
+}
+
+// ::selection {
+//   text-shadow: none;
+// }
+
+// ::-moz-selection {
+//   text-shadow: none;
+// }
+
+// ::-webkit-selection {
+//   text-shadow: none;
+// }
+
+.form-control {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+//#Auto Complete Forms Style Remove
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 0;
+  background: #f1f1f1;
+  -webkit-text-fill-color: #4a4a4a;
+  -webkit-box-shadow: 0;
+  transition: 0;
+  color: #4a4a4a;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}

@@ -1,0 +1,82 @@
+/***********************************************************************************************\
+#1. Global 
+\***********************************************************************************************/
+html {
+  overflow-x: hidden;
+  font-size: 16px;//#ROOT FONT SIZE
+}
+
+html,
+body {
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+//#Font Rendering
+body,
+* {
+  font-family: $site-font, sans-serif;
+}
+
+body {
+  background-color: $bg-color;
+  color: $font-primary;
+  position: relative;
+  height: 100%;
+}
+
+.spacer-50{
+  height: 50px;
+}
+
+%siteContainer{
+
+  @include sm-min{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @include sm{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.site-navbar{
+  background-color: $bg-color;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  @extend %siteContainer;
+  box-shadow: 2px 3px 12px 0px rgba(0, 0, 0, 0.11);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.page-wrapper{
+  padding-top: 120px;
+  padding-bottom: 30px;
+@extend %siteContainer
+}
+
+
+.custom-scrollbar {
+  &::-webkit-scrollbar {
+    background-color: rgba($color: $primary-color, $alpha: 0.5);
+    border: 2px solid $bg-color;
+    border-radius: 5px;
+    height: 9px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: $primary-color;
+  }
+}

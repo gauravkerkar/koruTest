@@ -1,0 +1,109 @@
+.auth{
+    height: 100%;
+
+    &__content,&__form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      
+        @include md-min{
+            height: 100%;
+        }
+        @include md{
+            padding: 48px 15px;
+        }
+    }
+    &__content{
+        background: url('/assets/image/icons/communication.png') 91% 100% no-repeat,$secondary-color;
+        background-size: 130px;
+        @include md-min{
+            width: 60%;
+            padding: 30px 60px;
+        }
+        @include md{
+            flex: 1;
+        }
+        
+        //#TITLE
+        &-title{
+            font-weight: 300;
+            color: $font-secondary;
+            position: relative;
+            @include xs-min{
+                line-height: 71px;
+                font-size: 54px;
+            }
+            @include xs{
+                font-size: 29px;
+            }
+
+            &-wrapper{
+                position: relative;
+                &::before{
+                    content: "";
+                    display: block;
+                    background-color: #dba9a9;
+                    border-radius: 50%;
+                    filter: blur(34px);
+                    position: absolute;
+                    left: -15px;
+                    top: -15px;
+                    animation: move 2s linear alternate-reverse infinite;
+                    @include xs-min{
+                        width: 140px;
+                        height: 140px;
+                    }
+                    @include xs{
+                        width: 93px;
+                        height: 104px;
+                    }
+                }
+            }
+        }
+        &-holder{
+            max-width: 516px;
+            margin: auto;
+        }
+    }
+    &__form{
+        @include md-min{
+            width: 40%;
+        }
+        background-color: #fff;
+
+    }
+
+}
+
+@keyframes move {
+    0%{
+        transform: translate(25px, 47px);
+    }
+    100%{
+        transform: translate(0, 0);
+    }
+
+}
+
+/* =====#LOGIN FORM===== */
+.login{
+    max-width: 320px;
+    // background: #a5eaa0;
+    margin: auto;
+    //#HEADER
+    &__header{
+        &-icon{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: $secondary-color;
+            display: grid;
+            place-content: center;
+            margin: auto;
+        }
+        &-text{
+            font-size: 26px;
+            color: $font-secondary;
+        }
+    }
+}

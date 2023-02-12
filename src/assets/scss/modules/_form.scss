@@ -1,0 +1,81 @@
+.form{
+    margin-top: 25px;
+    &-input{
+        &__group{
+            border: 1px solid #b4b4b4;
+            border-radius: 4px;
+            display: flex;
+            padding: 5px 12px 5px 12px;
+
+            &-wrapper{
+                &:not(:last-child){
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        &__area{
+            border: 0;
+            outline: 0;
+            box-shadow: none;
+            width: 100%;
+            padding-left:10px;
+            background:transparent ;
+        }
+    }
+
+    &-action{
+        &__btn,&__btn{
+            width: 100%;
+            color: #fff;
+            border-radius: 4px;
+            background-color: $primary-color;
+            border: 0;
+            margin-top: 30px;
+            
+                &:hover,&:focus,&:active{
+                    background-color: darken($color: $primary-color, $amount: 10) !important;    
+                    color: #fff !important;
+                }
+            
+           
+        }
+
+        &__footer{
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+          &-link{
+            font-weight:bold;
+            color: $font-primary;
+            &:hover,&:active,&:focus{
+                text-decoration: underline;
+                color: inherit;
+            }
+          }
+        }
+
+    
+    }
+}
+
+.error-msg {
+    color: $error;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    line-height: 1;
+  
+    &::before {
+      content: url("/assets/image/icons/error-icon.svg");
+      margin-right: 10px;
+    }
+  }
+
+  .box-error {
+    border-color: $error;
+  }
+  .box-success {
+    border-color: $success;
+  }

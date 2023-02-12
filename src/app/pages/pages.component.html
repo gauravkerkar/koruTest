@@ -1,0 +1,14 @@
+<!-- =================================
+            #NAVBAR
+====================================== -->
+<div class="site-navbar d-flex justify-content-between">
+<img class="img-fluid" src="/assets/image/logo.svg" alt="logo">
+
+<button class="btn primary-btn" (click)="logOut($event)">
+    logout
+</button>
+</div>
+
+<div class="page-wrapper">
+    <router-outlet></router-outlet>
+</div>

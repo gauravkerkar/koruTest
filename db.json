@@ -1,0 +1,83 @@
+{
+    "details": [{
+      "id":1,
+      "username": "blace",
+      "phone": "668-164-2898",
+      "email": "udioniso0@spiegel.de"
+    }, {
+      "id":2,
+      "username": "lpotteridge",
+      "phone": "707-628-0718",
+      "email": "msawyer1@stanford.edu"
+    }, {
+      "id":3,
+      "username": "jleyshon",
+      "phone": "528-674-5176",
+      "email": "swindybank2@dell.com"
+    }, {
+      "id":4,
+      "username": "gwildman",
+      "phone": "260-282-4033",
+      "email": "kmilam3@shareasale.com"
+    }, {
+      "id":5,
+      "username": "nshew",
+      "phone": "638-813-1976",
+      "email": "chaysar4@unicef.org"
+    }, {
+      "id":6,
+      "username": "bmckeever",
+      "phone": "466-473-4983",
+      "email": "alynes5@ycombinator.com"
+    }, {
+      "id":7,
+      "username": "dhaton",
+      "phone": "246-324-7401",
+      "email": "gwhewill6@reverbnation.com"
+    }, {
+      "id":8,
+      "username": "bricardin",
+      "phone": "743-928-5604",
+      "email": "breggio7@squidoo.com"
+    }, {
+      "id":9,
+      "username": "bbaccup",
+      "phone": "290-743-9138",
+      "email": "ehazelton8@hugedomains.com"
+    }, {
+            "id":10,
+      "username": "tvagg",
+      "phone": "566-527-9750",
+      "email": "hslator9@who.int"
+    }, {
+      "id":11,
+      "username": "gdomeka",
+      "phone": "217-560-8036",
+      "email": "cschuttera@twitter.com"
+    }, {
+      "id":12,
+      "username": "jgornerb",
+      "phone": "502-818-4247",
+      "email": "gcommingsb@fc2.com"
+    }, {
+      "id":13,
+      "username": "ebischofc",
+      "phone": "752-357-6784",
+      "email": "tforbearc@phpbb.com"
+    }, {
+      "id":14,
+      "username": "rfloodd",
+      "phone": "444-300-7473",
+      "email": "aroostand@furl.net"
+    }, {
+      "id":15,
+      "username": "drosae",
+      "phone": "227-879-6507",
+      "email": "acolbridgee@people.com.cn"
+    }, {
+      "id":16,
+      "username": "ncasajuanaf",
+      "phone": "545-248-6056",
+      "email": "bstrattenf@over-blog.com"
+    }]
+  }

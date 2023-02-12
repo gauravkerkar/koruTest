@@ -1,0 +1,72 @@
+<div class="login">
+
+    <!-- ===#LOGO=== -->
+    <div class="text-center">
+        <img class="img-fluid login__logo" src="/assets/image/logo.svg" alt="koru">
+    </div>
+
+    <div class="spacer-50"></div>
+
+    <!-- =====#HEADER===== -->
+    <div class="login__header text-center">
+        <div class="login__header-icon mb-2">
+            <img width="18" height="21" class="img-fluid" src="/assets/image/icons/lock.svg" alt="lock">
+        </div>
+        <h4 class="login__header-text">Welcome back</h4>
+    </div>
+
+
+    <!-- ====#FORM==== -->
+    <div class="form" [formGroup]="loginInfo">
+        <div>
+            <!-- ===#USER NAME=== -->
+            <div class="form-input__group-wrapper">
+                <label class="form-input__group {{(userName?.touched) && ((userName?.errors?.['required']) || userName?.errors?.['minlength']) ? 'box-error' : userName?.touched && 'box-success'}}" >
+                    <img class="img-fluid" src="/assets/image/icons/user.svg" alt="user">
+                    <input class="form-input__area" type="text" placeholder="Username" formControlName="UserName">
+                </label>
+                 <!-- ===#ERROR MESSAGE=== -->
+                 <ng-container *ngIf="userName?.touched">
+                    <p class="error-msg" *ngIf="userName?.errors?.['required']">
+                        Please enter username
+                    </p>
+                    <p class="error-msg" *ngIf="userName?.errors?.['minlength']">
+                        Please enter min 3 characters
+                    </p>
+                    
+                </ng-container>
+            </div>
+            <!-- ===#PASSWORD=== -->
+            <div class="form-input__group-wrapper">
+                <label class="form-input__group {{(password?.touched) && ((password?.errors?.['required']) || password?.errors?.['passwordInvalid']) ? 'box-error' : password?.touched && 'box-success'}}">
+                    <img class="img-fluid" src="/assets/image/icons/lock-filled.svg" alt="user">
+                    <input class="form-input__area" type="{{passwordToggle? 'password' : 'text'}}" placeholder="Password" formControlName="Password">
+                    <button class="password-toggle  p-0" [class.show]="!passwordToggle" (click)="passwordToggle = !passwordToggle"><img src="/assets/image/icons/eye.svg" alt="show password"></button>
+                </label>
+                             <!-- ===#ERROR MESSAGE=== -->
+                             <ng-container *ngIf="password?.touched">
+                                <p class="error-msg" *ngIf="password?.errors?.['required']">
+                                    Please enter password
+                                </p>
+                                <p class="error-msg"
+                                    *ngIf="!password?.errors?.['required'] && password?.errors?.['passwordInvalid']">
+                                    Please enter at least 8 character with number, symbol, capital and small letter
+                                </p>
+                            </ng-container>
+            </div>
+        </div>
+        <!-- ===#FORGOT PASSWORD=== -->
+        <div class="text-end mt-2">
+            <button class="forgot-pass">Forgot Password?</button>
+        </div>
+
+
+        <!-- ====#ACTION==== -->
+        <div class="form-action">
+            <button class="btn form-action__btn" (click)="nextStep($event)">Login</button>
+            <p class="form-action__footer">Don't have an Account? <a class="form-action__footer-link" routerLink="/auth/login">Sign Up</a></p>
+        </div>
+    </div>
+
+
+</div>

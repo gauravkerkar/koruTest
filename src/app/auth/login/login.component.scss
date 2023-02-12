@@ -1,0 +1,38 @@
+.forgot-pass{
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+    outline: none;
+    background-color: transparent;
+
+    font-size: 13px;
+    color: #868484;
+    font-weight: 600;
+
+    &:hover,&:active,&:focus{
+        text-decoration: underline;
+    }
+}
+
+.password-toggle{
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    position: relative;
+    &.show{
+&::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #000;
+    transform: rotate(-45deg);
+    bottom: -4px;
+    top: 0;
+    margin: auto;
+    left: -1px;
+    right: 0;
+}
+    }
+}
