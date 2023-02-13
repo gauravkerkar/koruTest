@@ -96,7 +96,10 @@ this.loading =false
   //#DELETE CONFIRMATION
   openDialog(id: number) {
     const dialogRef = this.dialog.open(DialogComponent, {
-      panelClass: 'action-dialog'
+      panelClass: 'action-dialog',
+      data:{
+        'text':"Are you sure want to delete"
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -117,10 +120,32 @@ this.loading =false
   //#DELETE SELECTED
   deleteSelected(event: any) {
     let _selectedItems = this.selection.selected
-    event?.stopPropagation()
+    
     //#MAKE A BACKEND REQUEST TO DELETE ITEMS BASED ON ID
-    this.sortedData = this.sortedData.filter(function (elem: any) {
-      return _selectedItems.indexOf(elem.id) === -1;
+
+
+    const dialogRef = this.dialog.open(DialogComponent, {
+      panelClass: 'action-dialog',
+      data:{
+        'text':"Are you sure want to delete"
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      if (result) {
+        //#MAKE A REQUEST TO DELETE ITEM BASED ON UNIQUE ID AND 
+        this.sortedData = this.sortedData.filter(function (elem: any) {
+          return _selectedItems.indexOf(elem.id) === -1;
+        });
+        this._snackBar.openFromComponent(SnackbarComponent, {
+          duration: 1000,
+          panelClass: 'action-snackbar',
+          horizontalPosition: right,
+          verticalPosition: bottom,
+        });
+        this.selection.clear()
+      }
     });
   }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { DialogComponent } from '../components/dialog/dialog.component';
 
 @Component({
   selector: 'app-pages',
@@ -8,17 +10,30 @@ import { Router } from '@angular/router';
 })
 export class PagesComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,public dialog: MatDialog,) { }
 
   ngOnInit(): void {
   }
 
   logOut(event:any){
 event.stopPropagation()
-localStorage.removeItem('koruAuth')
-console.log("logout");
+const dialogRef = this.dialog.open(DialogComponent, {
+  panelClass: 'action-dialog',
+  data:{
+    'text':"Are you sure want to log out"
+  }
+});
 
-this.router.navigate(['/auth/login']);
+dialogRef.afterClosed().subscribe(result => {
+
+  if (result) {
+    localStorage.removeItem('koruAuth')
+    console.log("logout");
+    
+    this.router.navigate(['/auth/login']);
+  }
+});
+
   }
 
 }
