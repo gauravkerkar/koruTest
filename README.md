@@ -24,6 +24,10 @@ https://github.com/gauravkerkar/koruTest.git
 
 5)Open a web browser and navigate to http://localhost:4200 to access the application.
 
+EXPECTED OUTPUT
+=====================
+https://www.awesomescreenshot.com/video/14756656?key=61401275d138601ea1534834686b1426
+
 
 Thank you :)
 
